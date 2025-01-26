@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./utils.sh
+
 RED='\033[31m'
 BLUE='\033[94m'
 GREEN='\033[32m'
@@ -42,7 +44,7 @@ function ajouter_tache_cron() {
     clear
     echo -e "${BLUE}=== Ajouter une tâche cron ===${NC}"
     echo "Format : minute heure jour mois jour_de_la_semaine commande"
-    echo "Exemple : 0 8 * * 1 echo \"Bonjour\" >> ~/rapport.txt"
+    echo "Exemple : 0 8 * * 1 echo \"Bonjour\" >> /var/log/rapport.txt"
 
     while true; do
         echo -e "${BLUE}================================${NC}"
@@ -119,6 +121,6 @@ while true; do
         2) ajouter_tache_cron ;;
         3) supprimer_tache_cron ;;
         4) clear; exit 0 ;;
-        *) echo -e "${RED}Option invalide. Veuillez réessayer.${NC}";;
+        *) afficher_erreur "Option invalide. Veuillez réessayer." ;;
     esac
 done

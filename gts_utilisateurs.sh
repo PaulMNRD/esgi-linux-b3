@@ -148,6 +148,12 @@ create_group() {
 
     sudo groupadd "$groupname"
     echo -e "${GREEN}Groupe $groupname créé avec succès.${NC}"
+
+    backup_dir="/backup/groups/$groupname"
+    sudo mkdir -p "$backup_dir"
+    sudo chown root:"$groupname" "$backup_dir"
+    sudo chmod 770 "$backup_dir"
+    echo -e "${GREEN}Dossier de sauvegarde $backup_dir créé avec succès.${NC}"
 }
 # Liste les utilisateurs avec le quota unique
 list_users() {
