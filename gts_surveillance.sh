@@ -6,6 +6,7 @@ LIGHT_BLUE='\033[94m'
 GREEN='\033[32m'
 NC='\033[0m' # No Color
 
+clear
 # Fonction pour surveiller l'espace disque
 disk_usage() {
     echo -e "${LIGHT_BLUE}===== Espace disque disponible =====${NC}"
@@ -29,7 +30,6 @@ memory_usage() {
 
 # Boucle du menu interactif
 while true; do
-    clear
     echo -e "${LIGHT_BLUE}============================${NC}"
     echo -e "1) Surveillance de l'espace disque"
     echo -e "2) Suivi des processus actifs"

@@ -6,6 +6,8 @@ LIGHT_BLUE='\033[94m'
 GREEN='\033[32m'
 NC='\033[0m' # No Color
 
+clear
+
 # Fonction pour lister les groupes disponibles (préfixe '_')
 list_groups() {
     # Récupère les groupes disponibles avec le préfixe '__'
@@ -194,7 +196,6 @@ configure_sudo() {
 }
 
 while true; do
-    clear
     echo -e "${LIGHT_BLUE}============================${NC}"
     echo -e "1. Créer un utilisateur"
     echo -e "2. Supprimer un utilisateur"
