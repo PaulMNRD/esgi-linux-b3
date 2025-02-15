@@ -32,7 +32,7 @@ function configurer_journalisation_centralisee() {
     else
         echo "*.*    $LOG_FILE_CENTRAL" | sudo tee -a /etc/rsyslog.conf > /dev/null
         sudo touch "$LOG_FILE_CENTRAL"
-        sudo chown syslog:__IT "$LOG_FILE_CENTRAL"
+        sudo chown :__IT "$LOG_FILE_CENTRAL"
         sudo chmod 640 "$LOG_FILE_CENTRAL"
         echo -e "${GREEN}Journalisation centralisée configurée avec succès.${NC}"
     fi
@@ -83,7 +83,7 @@ if \$programname == '$service' then $service_log
 & stop
 EOL
             sudo touch "$service_log"
-            sudo chown syslog:__IT "$service_log"
+            sudo chown :__IT "$service_log"
             sudo chmod 640 "$service_log"
             echo -e "${GREEN}Journalisation pour $service configurée.${NC}"
         else
