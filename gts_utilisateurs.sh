@@ -194,6 +194,7 @@ configure_sudo() {
 }
 
 while true; do
+    clear
     echo -e "${LIGHT_BLUE}============================${NC}"
     echo -e "1. Créer un utilisateur"
     echo -e "2. Supprimer un utilisateur"

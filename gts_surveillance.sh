@@ -29,6 +29,7 @@ memory_usage() {
 
 # Boucle du menu interactif
 while true; do
+    clear
     echo -e "${LIGHT_BLUE}============================${NC}"
     echo -e "1) Surveillance de l'espace disque"
     echo -e "2) Suivi des processus actifs"
