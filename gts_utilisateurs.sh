@@ -10,7 +10,7 @@ NC='\033[0m' # No Color
 list_groups() {
     # Récupère les groupes disponibles avec le préfixe '__'
     groups=$(getent group | awk -F: '$1 ~ /^__/ {print $1}')
-    
+
     # Vérifie s'il y a des groupes disponibles
     if [[ -z "$groups" ]]; then
         echo -e "${RED}Aucun groupe disponible avec le préfixe '__'.${NC}"
@@ -150,7 +150,7 @@ create_group() {
     echo -e "${GREEN}Groupe $groupname créé avec succès.${NC}"
 
     backup_dir="/backup/groups/$groupname"
-    sudo mkdir -p "$backup_dir"
+    sudo mkdir "$backup_dir"
     sudo chown root:"$groupname" "$backup_dir"
     sudo chmod 770 "$backup_dir"
     echo -e "${GREEN}Dossier de sauvegarde $backup_dir créé avec succès.${NC}"
