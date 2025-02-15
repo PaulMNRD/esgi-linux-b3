@@ -179,6 +179,20 @@ list_users() {
     done
 }
 
+# Configure sudo pour un utilisateur
+configure_sudo() {
+    echo -e "${LIGHT_BLUE}=== Configuration des privilèges sudo ===${NC}"
+    read -rp "Nom de l'utilisateur : " username
+
+    if ! id "$username" >/dev/null 2>&1; then
+        echo -e "${RED}Erreur : L'utilisateur $username n'existe pas.${NC}"
+        return 1
+    fi
+
+    sudo usermod -aG sudo "$username"
+    echo -e "${GREEN}Utilisateur $username ajouté au groupe sudo avec succès.${NC}"
+}
+
 while true; do
     echo -e "${LIGHT_BLUE}============================${NC}"
     echo -e "1. Créer un utilisateur"
