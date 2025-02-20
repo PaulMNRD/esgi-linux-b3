@@ -32,6 +32,7 @@ function afficher_taches_cron() {
     if [[ -z "$cron_taches" ]]; then
         echo "Aucune tâche cron configurée."
     fi
+    crontab -l 2>/dev/null
 
     echo -e "${BLUE}=============================${NC}"
     echo
